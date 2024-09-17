@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="13401319"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-21 11:33:57 "/>
+        <attribute name="created" value="MTM0MDEzMTk7TElNLTI2MDsyMDIxLTA1LTIxOyIxMToyMjoxNCAiOzIwMDg="/>
+        <attribute name="edited" value="MTM0MDEzMTk7TElNLTI2MDsyMDIxLTA1LTIxOyIxMTozMzo1NyAiOzE7MjEyNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="capienza, personeIN, NRbambini, nuove, postiDisponibili" type="Real" array="False" size=""/>
+            <output expression="&quot;scrivi la capienza della giostra &quot;" newline="True"/>
+            <input variable="capienza"/>
+            <assign variable="personeIN" expression="0"/>
+            <while expression="(personeIN&lt;capienza)">
+                <output expression="&quot;inserisci il numero di persone in ingresso&quot;" newline="True"/>
+                <input variable="nuove"/>
+                <assign variable="personeIN" expression="personeIn+nuove"/>
+                <output expression="&quot;quante di queste sono bambini?&quot;" newline="True"/>
+                <input variable="NRbambini"/>
+                <if expression="NRbambini&gt;0">
+                    <then>
+                        <assign variable="personeIN" expression="personeIn-(NRbambini*0.5)"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="postiDisponibili" expression="capienza-personeIN"/>
+                <output expression="&quot;restano disponibili posti &quot;&amp;postiDisponibili" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

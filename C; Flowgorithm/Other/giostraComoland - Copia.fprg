@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="13401319"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-27 05:57:59 "/>
+        <attribute name="created" value="MTM0MDEzMTk7TElNLTI2MDsyMDIxLTA1LTIxOyIxMToyMjoxNCAiOzIwMDg="/>
+        <attribute name="edited" value="MTM0MDEzMTk7TElNLTI2MDsyMDIxLTA1LTIxOyIxMTozMzo1NyAiOzE7MjEyNQ=="/>
+        <attribute name="edited" value="V2luZG93cztERVNLVE9QLTVQRzAyVko7MjAyMS0wNS0yNzsiMDU6NTc6NTkgIjsxOzMxMDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="capienza, personeIN, NRbambini, nuove, postiDisponibili" type="Real" array="False" size=""/>
+            <output expression="&quot;scrivi la capienza della giostra &quot;" newline="True"/>
+            <input variable="capienza"/>
+            <assign variable="personeIN" expression="0"/>
+            <while expression="(personeIN&lt;capienza)">
+                <output expression="&quot;inserisci il numero di persone in ingresso&quot;" newline="True"/>
+                <input variable="nuove"/>
+                <assign variable="personeIN" expression="personeIn+nuove"/>
+                <output expression="&quot;quante di queste sono bambini?&quot;" newline="True"/>
+                <input variable="NRbambini"/>
+                <if expression="NRbambini&gt;0">
+                    <then>
+                        <assign variable="personeIN" expression="personeIn-(NRbambini*0.5)"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="postiDisponibili" expression="capienza - personeIN"/>
+                <if expression="postiDisponibili &lt; 0">
+                    <then>
+                        <output expression="&quot;Non ci sono abbastanza posti ):&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="postiDisponibili = 0">
+                            <then>
+                                <output expression="&quot;Si pu&#242; entrare ma &#232; il massimo della giostra&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="0 &lt; postiDisponibili">
+                                    <then>
+                                        <output expression="&quot;Restano: &quot;" newline="False"/>
+                                        <output expression="postiDisponibili" newline="False"/>
+                                        <output expression="&quot; Posti liberi&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="postiDisponibili" expression="capienza-personeIN"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

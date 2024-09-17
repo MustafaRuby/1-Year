@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  float resto;
+float prezzo2 = 0;
+float prezzo = 0;
+float importo = 0;
+float moneta = 0;
+float paga = 0;
+int prodotti = 0;
+float pagare;
+  int i = 0;
+  
+cout << "benvenuto al nostro mercato\n";
+
+cout << "Quanti prodotti vuole acquistare?\n";
+cin >> prodotti;
+
+while (i < prodotti)
+{
+  prezzo2 = prezzo + paga;
+  cout << "\ninserisci il prezzo del seguente oggetto\n";
+  cin >> prezzo;
+  paga = prezzo2 ;
+  i++;
+  
+}
+paga = prezzo + paga;
+
+cout << "\nHa da pagare " << paga << "€\n";
+
+  while (importo < paga)
+  {
+    cout << "\npaga pure\n";
+    cin >> moneta;
+    importo = importo + moneta;
+    if(paga < importo)
+    {
+      resto = importo - paga;
+      cout << "\nHa il resto di " << resto << "€\n";
+      
+    }
+    else
+    {
+      pagare  = paga - importo;
+      cout << "\nHa ancora da pagare " << pagare << "€\n";
+      
+    }
+  }
+  cout << "prego il resto..." << endl;
+  cout << "Arrivederci";
+  
+  
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Windows"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-20 08:35:38 PM"/>
+        <attribute name="created" value="V2luZG93cztERVNLVE9QLTVQRzAyVko7MjAyMS0wNS0wODsiMDM6NTE6MDMgIjsyOTc3"/>
+        <attribute name="edited" value="V2luZG93cztERVNLVE9QLTVQRzAyVko7MjAyMS0wNS0wODsiMDQ6Mzk6MDEgIjsxOzMwOTA="/>
+        <attribute name="edited" value="YWJvdWU7REVTS1RPUC03RDNHQk1OOzIwMjItMTAtMjA7MDg6MzU6MzggUE07MTsyOTYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Benvenuto al nostro mercato abbiamo sconti ma puoi comprare tre cose a volta&quot;" newline="True"/>
+            <declare name="pr1, pr2, pr3, totale, sconto, finale" type="Real" array="False" size=""/>
+            <output expression="&quot;Metti il prezzo del primo ogetto&quot;" newline="True"/>
+            <input variable="pr1"/>
+            <output expression="&quot;metti il prezzo del secondo ogetto&quot;" newline="True"/>
+            <input variable="pr2"/>
+            <output expression="&quot;metti il prezzo del terzo ogetto&quot;" newline="True"/>
+            <input variable="pr3"/>
+            <assign variable="totale" expression="pr1 + pr2 + pr3"/>
+            <if expression="Totale &gt; 100">
+                <then>
+                    <assign variable="sconto" expression="totale * 20 / 100"/>
+                    <output expression="&quot;Devi pagare:&quot;" newline="True"/>
+                    <assign variable="finale" expression="totale - sconto"/>
+                    <output expression="finale" newline="True"/>
+                    <output expression="&quot;Con sconto di 20 % perch&#233; la tua spesa &#232; maggiore di 100&#8364;&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Devi pagare:&quot;" newline="True"/>
+                    <output expression="totale" newline="True"/>
+                    <output expression="&quot;Torna di nuovo (:&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

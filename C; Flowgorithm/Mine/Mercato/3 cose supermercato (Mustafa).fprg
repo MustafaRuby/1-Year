@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Windows"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-15 03:58:24 "/>
+        <attribute name="created" value="V2luZG93cztERVNLVE9QLTVQRzAyVko7MjAyMS0wNS0xNTsiMDM6MTE6MjQgIjsyOTc0"/>
+        <attribute name="edited" value="V2luZG93cztERVNLVE9QLTVQRzAyVko7MjAyMS0wNS0xNTsiMDM6NTg6MjQgIjsyOzMwOTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pr1, pr2, pr3, prezzo, importo, moneta, resto, paga" type="Real" array="False" size=""/>
+            <output expression="&quot;Benvenuto/a al *3 prodotti* super mercato&quot;" newline="True"/>
+            <output expression="&quot;Metti il prezzo del primo oggetto&quot;" newline="True"/>
+            <input variable="pr1"/>
+            <output expression="&quot;Metti il prezzo del secondo oggetto&quot;" newline="True"/>
+            <input variable="pr2"/>
+            <output expression="&quot;Metti il prezzo del terzo oggetto&quot;" newline="True"/>
+            <input variable="pr3"/>
+            <assign variable="prezzo" expression="pr1 + pr2 + pr3"/>
+            <assign variable="importo" expression="0"/>
+            <output expression="&quot;Hai da pagare: &#8364;&quot;" newline="False"/>
+            <output expression="prezzo" newline="True"/>
+            <while expression="importo &lt; prezzo">
+                <output expression="&quot;Inserisci moneta&quot;" newline="True"/>
+                <input variable="moneta"/>
+                <assign variable="importo" expression="importo + moneta"/>
+                <if expression="prezzo &lt; importo">
+                    <then>
+                        <assign variable="resto" expression="importo - prezzo"/>
+                        <output expression="&quot;Hai resto di :&#8364;&quot;" newline="False"/>
+                        <output expression="resto" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="paga" expression="prezzo - importo"/>
+                        <output expression="&quot;Hai ancora da pagare: &#8364;&quot;" newline="False"/>
+                        <output expression="paga" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;La macchina ti d&#224; il resto...&quot;" newline="True"/>
+            <output expression="&quot;Grazie, buona giornata ritorna di nuovo&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

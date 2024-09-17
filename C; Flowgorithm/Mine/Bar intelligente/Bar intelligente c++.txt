@@ -1,0 +1,163 @@
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+#include <time.h>
+int main () {
+
+  int posti;
+  int persone1;
+  int persone2;
+  int bambini;
+  int pos;
+
+  cout << "(Dal punto di vista del lavoratore) \n";
+  cout << "\nCi vuole sapre se i posti nel bar sono sufficenti per occupare le persone fuori \n";
+  cout << "\nQuanti posti ci sono nel bar? \n";
+  cin >> posti;
+
+  
+  if(0 < posti)
+  {
+
+    persone1 = 0;
+    if (persone1 < posti)
+    {
+      cout << "\nQuanti persone ci sono all'ingresso ora? \n";
+      cin >> persone2;
+      if(0 < persone2)
+      {
+        persone1 = persone1 + persone2;
+        cout << "\nCi sono dei bambini? \n";
+        cin >> bambini;
+        
+        if(0 < bambini)
+        {
+          persone1 = persone1 - (bambini * 0.5);
+        }
+
+        pos = posti - persone1;
+
+        if(pos < 0)
+        {
+          cout << "\nNon ci sono abbastanza posti \n";
+        }
+        else if(0 < pos)
+        {
+          cout << "\nI posti desponibili sono: " << pos << " posti\n";
+          int pr1, pr2, pr3, prezzo, importo, moneta, resto, paga, ciclo, quantità;
+
+          cout << "\nOra passiamo al cliente\n";
+          cout << "\nIl barista: Benvenuto/a al nostro bar\n";
+          
+          cout << "\nIl barista: Qual'è il prezzo del primo oggetto che vuoi comprare?\n";
+          cin >> pr1;
+          
+          cout << "\nIl barista: Qual'è il prezzo del secodo? \n";
+          cin >> pr2;
+
+          cout << "\nIl barista: Qual'è il prezzo del terzo?\n";
+          cin >> pr3;
+
+          prezzo = pr1 + pr2 + pr3;
+          importo = 0;
+          cout << "\nHai da pagare " << prezzo << " €\n";
+          while(importo < prezzo)
+          {
+            cout << "\nIl barista: paga pure\n";
+            cin >> moneta;
+            importo = importo + moneta;
+            if(prezzo < importo)
+            {
+              resto = importo - prezzo;
+              cout << "\nIl barista: Hai resto di " << resto << " €\n";
+              
+            }
+            else
+            {
+              paga = prezzo - importo;
+              cout << "\nIl barista: Hai ancora da pagare " << paga << " €\n";
+              
+            }
+          }
+          cout << "\nGrazie, ritorna di nuovo\n";
+
+
+          
+          } 
+          else if(pos == 0)
+          {
+            cout << "\nTutti possono entrare, ma il bar è completamente pieno\n";
+            int pr1, pr2, pr3, prezzo, importo, moneta, resto, paga, ciclo, quantità;
+
+          cout << "\nOra passiamo al cliente\n";
+          cout << "\nIl barista: Benvenuto/a al nostro bar\n";
+          
+          cout << "\nIl barista: Qual'è il prezzo del primo oggetto che vuoi comprare?\n";
+          cin >> pr1;
+          
+          cout << "\nIl barista: Qual'è il prezzo del secodo? \n";
+          cin >> pr2;
+
+          cout << "\nIl barista: Qual'è il prezzo del terzo?\n";
+          cin >> pr3;
+
+          prezzo = pr1 + pr2 + pr3;
+          importo = 0;
+          cout << "\nHai da pagare " << prezzo << " €\n";
+          while(importo < prezzo)
+          {
+            cout << "\nIl barista: paga pure\n";
+            cin >> moneta;
+            importo = importo + moneta;
+            if(prezzo < importo)
+            {
+              resto = importo - prezzo;
+              cout << "\nIl barista: Hai resto di " << resto << " €\n";
+              
+            }
+            else
+            {
+              paga = prezzo - importo;
+              cout << "\nIl barista: Hai ancora da pagare " << paga << " €\n";
+              
+            }
+          }
+          cout << "\nGrazie, ritorna di nuovo\n";
+            
+            
+          }
+          
+
+        
+        
+      }
+      else if(0 == persone2)
+      {
+        cout << "\nOk niente, aspetta che ci siano delle persone\n";
+      }
+      else if(persone2 < 0)
+      {
+        cout << "\nNo ada che simpatico\n";
+      }
+        
+    }
+
+
+
+
+    
+  }
+  else if(posti == 0)
+  {
+    cout << "\nSiamo chiusi, torna dopo\n";
+  }
+  else if(posti < 0)
+  {
+    cout << "\nMa che cazzo significa, non fare i giochini";
+  }
+
+  
+  return 0;
+  
+  
+}
